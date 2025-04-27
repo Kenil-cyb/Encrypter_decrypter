@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureCrypt | Data Encryption Tool</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>SecureCrypt</h1>
+      <p class="subtitle">Military-grade encryption tool</p>
+      <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</button>
+    </div>
+
+    <div class="card">
+      <label for="inputText">Your Message</label>
+      <textarea id="inputText" class="input-area" rows="4" placeholder="Enter sensitive text here..."></textarea>
+      
+      <label for="password">Encryption Key (Optional)</label>
+      <input type="password" id="password" class="password" placeholder="Enter passphrase...">
+      
+      <div class="button-group">
+        <button onclick="encryptText()" class="btn-primary">🔒 Encrypt</button>
+        <button onclick="decryptText()" class="btn-secondary">🔓 Decrypt</button>
+        <button onclick="copyResult()" class="btn-tertiary">📋 Copy</button>
+        <button onclick="resetFields()" class="btn-tertiary">♻️ Reset</button>
+      </div>
+      
+      <label for="result">Output</label>
+      <textarea id="result" class="output-area" rows="4" placeholder="Encrypted/decrypted result..." readonly></textarea>
+    </div>
+
+    <div class="card history-card">
+      <div class="history-header">
+        <h2>🔐 Message History</h2>
+        <button onclick="clearHistory()" class="btn-clear">🗑️ Clear All</button>
+      </div>
+      <ul id="pastMessages">
+        <li class="empty-state">No encrypted messages yet</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
